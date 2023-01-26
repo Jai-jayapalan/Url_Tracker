@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>shorten_url_tracker</title>
+    {% load static %}
+    <link rel="stylesheet" href="{% static 'css/style_Sheet.css' %}">
+    <link rel="stylesheet" href="{% static 'bootstrap_new/css/bootstrap.min.css' %}">
+</head>
+<body>
+    <center>
+        <h3>Tracking the end face of the url</h3>
+        <p>Have you ever wondered: Where does this link go? The REDLI Tool follows the path of the URL. It allows you to see the<br>
+            complete path a redirected URL goes through. It will show you the full redirection path of URLs, shortened links,<br>
+            or tiny URLs.
+        </p>
+        <form action="track/" method="post">
+            {% csrf_token %}
+            <p>Enter the URL</p><input type="url" name="user_url" placeholder="Enter URL" required>
+            <input type="submit" value="TRACK">
+            <button class="btn btn-outline-primary"><a href="helpline/" style="color: black;">HELPLINE</a></button>
+            <br><br>
+            <button class="btn btn-outline-primary"><a style="color: black;" href="shortner/">URL shortener</a></button>
+        </form>
+    </center>
+</body>
+</html>

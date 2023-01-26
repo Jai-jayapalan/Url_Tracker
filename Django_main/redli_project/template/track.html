@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tracking</title>
+</head>
+<body>
+    <center>
+        <h2>Tracking the END URL</h2>
+        <h4> {{message}} </h4>
+        <h4>END URL: <a href="{{end_url.url}}">{{end_url.url}}</a> </h4>
+        <h4>Status Code: {{end_url.status_code}} </h4>
+        <h2> {{lower_msg}} </h2>
+        <table border="1">
+            <thead>
+                <tr>
+                    <td>Status Code</td>
+                    <td>URL</td>
+                    <td>Reason</td>
+                </tr>
+            </thead>
+            <tbody>
+            {% for r in redirection %}
+            <tr>
+                <td>{{ r.status_code }}</td>
+                <td>{{ r.url }}</td>
+                <td>{{ r.reason }}</td>
+            </tr>
+            {% endfor %}
+            </tbody>
+        </table>
+        <br>
+        <h1>conclusion</h1>
+        <table border="1">
+            <thead>
+                <tr>
+                    <td>Safe</td>
+                    <td>Domain</td>
+                    <td>Ip_address</td>
+                    <td>spamming</td>
+                    <td>Malware</td>
+                    <td>Phishing</td>
+                    <td>Server</td>
+                </tr>
+            </thead>
+            <tbody>
+            <tr>
+                <td>{{ safer }}</td>
+                <td>{{ domain }}</td>
+                <td>{{ ip }}</td>
+                <td>{{ spam }}</td>
+                <td>{{ mal }}</td>
+                <td>{{ phish }}</td>
+                <td>{{ server }}</td>
+            </tr>
+            </tbody>
+        </table>
+        <button><a href="/">GO TO HOME</a></button>
+    </center>
+</body>
+</html>
